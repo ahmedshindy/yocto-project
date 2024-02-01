@@ -1,4 +1,4 @@
-# Build fro Qemu
+# Quick build for qemu
 
 ```
 sudo apt-get update      
