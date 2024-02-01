@@ -77,5 +77,6 @@ bbb-example: ELF 64-bit LSB pie executable, x86-64...
 
 ### Refs
 Useful Repo: https://github.com/Munawar-git/YoctoTutorials/tree/master
+
 Bitbake Manual: https://docs.yoctoproject.org/2.7.3/bitbake-user-manual/bitbake-user-manual.html#bitbake-examples
 
