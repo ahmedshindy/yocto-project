@@ -1,3 +1,27 @@
+# Build fro Qemu
+
+```
+sudo apt-get update      
+```
+#### Install requirements
+```
+sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm python3-subunit mesa-common-dev zstd liblz4-tool
+```
+#### Clone poky & sorce environment
+```
+mkdir yocto_tutorial
+cd yocto_tutorial
+git clone git://git.yoctoproject.org/poky -b kirkstone
+cd poky
+source oe-init-build-env qemu-build  
+```
+now we need to 
+1. change the build target to qemu
+2. create our own sources folder for better file organization ( optional )
+3. change the download folder sstate-cache folder to the one created at step 2, all changes are available conf/local.comf file, make sure to grep only changes that you need.
+4. build the minimal image `bitbake core-image-minimal`
+5. test `runqemu qemux86-64`
+
 ## Add your custom layer
 
 - The following 4 steps will add new custom layer with an example recipe called bbb-example, It will be installed in the new image and tested using the following
