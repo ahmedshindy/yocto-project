@@ -47,6 +47,12 @@ bitbake core-image-minimal
 
 ### Commands Toolkit
 ```
+devtool add help
+devtool edit-recipe recipe-name
+devtool  add link.git
+bitbake recipe-name -c devshell # to open a devshell
+ls -alh imag.tar.bx # show image size
+
 bitbake -c do_configure bbb-example
 bitbake -e bbb-example | grep ^WORKDIR=  # To serch for a variable
 bitbake -c do_compile helloworld
