@@ -65,6 +65,13 @@ bitbake -c do_cleansstate bbb-example
 bitbake -c do_cleansstate bbb-example
 bitbake-layers show-recipes | grep python3-*        # show recipes
 ```
+### Create Layer
+```
+bitbake-layers show-layers
+bitbake-layers show-recipes 'linux-*'
+bitbake-layers show-overlayed
+bitbake-layers create-layer
+```
 
 The following command runs the build task, which is the default task, on the foo_1.0.bb recipe file:
 ```
