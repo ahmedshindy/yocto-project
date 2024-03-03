@@ -88,6 +88,24 @@ bbb-example: ELF 64-bit LSB pie executable, x86-64...
 ```
 
 
+
+- use devtool as much as possible
+agood configure script should check for dependencies and fail before build time comes.
+
+devtool add help
+devtool add https://github.com/LetoThe2nd/libanswer 
+bitbake example-image 
+EXTRA_IMAGE_FEATURES = "... tools-sdk"
+ls -alh tmp/deploy/images/qemuarm/example-image...rootfs.tar.bx2 
+
+time bitbake example-image -c populate_sdk 
+IMAGE_INSTALL += "libanswer"
+devtool edit-recipie libanswer 
+DEPENDS = "boost" # build time dependencies
+RDEPENDS  = "bc" # Run time depends is bc
+ls /usr/bin/   ,you should find libanswer.so.0.0.1
+
+
 ### Refs
 Useful Repo: https://github.com/Munawar-git/YoctoTutorials/tree/master
 
